@@ -1,0 +1,34 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "@inertiajs/react": "^1.0.0",
+        "@vitejs/plugin-react": "^4.2.0",
+        "axios": "^1.7.4",
+        "laravel-vite-plugin": "^1.0",
+        "postcss": "^8.4.31",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "dependencies": {
+        "@emotion/css": "^11.13.5",
+        "@emotion/react": "^11.11.1",
+        "@emotion/styled": "^11.11.0",
+        "@inertiajs/progress": "^0.2.7",
+        "@mui/icons-material": "^5.15.2",
+        "@mui/material": "^5.15.2",
+        "@mui/x-date-pickers": "^6.18.6",
+        "clsx": "^2.1.1",
+        "lottie-web": "^5.12.2",
+        "moment": "^2.30.1",
+        "notistack": "^3.0.1",
+        "react-number-format": "^5.4.2",
+        "sass": "^1.69.5",
+        "sass-loader": "^12.1.0",
+        "vite": "^6.0.2"
+    }
+}
