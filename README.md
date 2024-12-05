@@ -52,6 +52,10 @@ An API Key is required from at least one news source to be able to use the appli
 
 ## Backend Structure
 
+### Laravel telescope
+
+The application uses [laravel](https://laravel.com/docs/11.x/telescope) telescope to view logs, requests, and much more, you can use this to view emails sent for password requests as well.
+
 ### Database configuration
 
 The database connection details are defined in `config/database.php`. This uses standard MySQL DB to run the application.
