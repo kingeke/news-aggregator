@@ -2,10 +2,9 @@
 
 namespace App\Services;
 
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
 
-class MediaStackApiService
+class MediastackApiService
 {
     public $httpService;
 
@@ -16,14 +15,11 @@ class MediaStackApiService
 
     public function getLatestNews()
     {
-        return Cache::remember('mediastack-latest-news', config('main.one_hr_ttl'), function () {
-
-            return $this->httpService->MediastackApi()->get("news", [
-                'limit'     => 100,
-                'sort'      => 'published_desc',
-                'languages' => 'en',
-            ])->collect();
-        });
+        return $this->httpService->MediastackApi()->get("news", [
+            'limit'     => 100,
+            'sort'      => 'published_desc',
+            'languages' => 'en',
+        ])->collect();
     }
 
     public function confirmApiKey($key)

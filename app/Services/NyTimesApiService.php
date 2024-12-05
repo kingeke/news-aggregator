@@ -2,7 +2,6 @@
 
 namespace App\Services;
 
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
 
 class NyTimesApiService
@@ -16,10 +15,7 @@ class NyTimesApiService
 
     public function getLatestNews()
     {
-        return Cache::remember('ny-times-api-latest-news', config('main.one_hr_ttl'), function () {
-
-            return $this->httpService->NyTimesApi()->get("svc/news/v3/content/all/all.json")->collect();
-        });
+        return $this->httpService->NyTimesApi()->get("svc/news/v3/content/all/all.json")->collect();
     }
 
     public function confirmApiKey($key)

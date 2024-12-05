@@ -77,7 +77,7 @@ class SettingsController extends Controller
             //dispatch news scrapper in the background
             RunCommandAsync::dispatch("news:scrapper");
 
-            RunCommandAsync::dispatch("php artisan db:seed --force");
+            RunCommandAsync::dispatch("db:seed --force");
 
             return redirect()->route('register')->with('message', messageResponse('success', "API Keys successfully updated"));
 

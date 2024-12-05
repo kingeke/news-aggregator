@@ -4,8 +4,6 @@ return [
 
     'ttl'                   => env("TTL", 86400),
 
-    'one_hr_ttl'            => env("ONE_HR_TTL", 3600),
-
     'articles_data_sources' => [
         'news_api'       => [
             'value'        => 'news_api',
@@ -34,7 +32,7 @@ return [
             'api_key'      => env("MEDIA_STACK_API_KEY"),
             'env_key'      => "MEDIA_STACK_API_KEY",
             'sign_up_page' => env("MEDIA_STACK_SIGN_UP_PAGE", "https://mediastack.com/signup"),
-            'service_name' => 'MediaStackApiService',
+            'service_name' => 'MediastackApiService',
             'valueKey'     => 'data',
         ],
     ],

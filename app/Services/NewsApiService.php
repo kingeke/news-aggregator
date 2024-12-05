@@ -25,12 +25,9 @@ class NewsApiService
 
     public function getLatestNews()
     {
-        return Cache::remember('news-api-latest-news', config('main.one_hr_ttl'), function () {
-
-            return $this->httpService->NewsApi()->get("top-headlines", [
-                'language' => "en",
-            ])->collect();
-        });
+        return $this->httpService->NewsApi()->get("top-headlines", [
+            'language' => "en",
+        ])->collect();
     }
 
     public function confirmApiKey($key)
