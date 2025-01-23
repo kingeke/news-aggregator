@@ -23,8 +23,6 @@ class AppServiceProvider extends ServiceProvider
     {
         if (isVercel()) {
 
-            echo "nonso";
-        
             \Illuminate\Support\Facades\URL::forceScheme('https');
 
             $dbPath = env('DB_DATABASE', database_path('database.sqlite'));
