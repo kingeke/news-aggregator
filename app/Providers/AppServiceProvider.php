@@ -5,7 +5,6 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        Schema::defaultStringLength(191);
+        
     }
 
     /**
@@ -22,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // if (isVercel()) {
+        if (isVercel()) {
 
             echo "nonso";
         
@@ -38,7 +37,7 @@ class AppServiceProvider extends ServiceProvider
 
                 Artisan::call("db:seed");
             }
-        // }
+        }
 
         \Illuminate\Database\Query\Builder::macro('toRawSql', function () {
             return vsprintf(str_replace(['?'], ['\'%s\''], $this->toSql()), $this->getBindings());
