@@ -9,7 +9,7 @@
     "outputDirectory": "public",
     "routes": [
         {
-            "src": "/(css|fonts|img|js|lib|vendor|assets)/(.*)",
+            "src": "/(css|fonts|img|js|lib|vendor|assets|build)/(.*)",
             "dest": "public/$1/$2"
         },
         {
