@@ -26,3 +26,8 @@ function generateUuid($title, $published_at)
 
     return md5($title . $published_at);
 }
+
+function isVercel()
+{
+    return !!env("APP_VERCEL");
+}
