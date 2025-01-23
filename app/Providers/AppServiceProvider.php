@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        if (isVercel()) {
+        // if (isVercel()) {
 
             echo "nonso";
         
@@ -38,7 +38,7 @@ class AppServiceProvider extends ServiceProvider
 
                 Artisan::call("db:seed");
             }
-        }
+        // }
 
         \Illuminate\Database\Query\Builder::macro('toRawSql', function () {
             return vsprintf(str_replace(['?'], ['\'%s\''], $this->toSql()), $this->getBindings());
