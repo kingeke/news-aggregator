@@ -13,7 +13,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get("/", "DashboardController@index")->name('dashboard');
 
-    Route::get("/runScrapper", "SettingsController@runScrapper")->name('runScrapper');
+    Route::get("/run-scrapper", "SettingsController@runScrapper")->name('runScrapper');
 
     Route::group(['prefix' => 'profile'], function () {
         
