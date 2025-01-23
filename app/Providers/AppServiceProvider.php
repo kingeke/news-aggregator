@@ -31,13 +31,9 @@ class AppServiceProvider extends ServiceProvider
 
                 File::put($dbPath, '');
 
-                Artisan::call("migrate:fresh --force");
+                Artisan::call("migrate");
 
-                info("Done migration");
-
-                Artisan::call("db:seed --force");
-
-                info("Done DB Seed");
+                Artisan::call("db:seed");
             }
         }
 

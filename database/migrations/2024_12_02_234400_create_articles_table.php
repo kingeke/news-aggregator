@@ -25,9 +25,11 @@ return new class extends Migration
             $table->string('category')->index()->nullable();
             $table->dateTime('published_at')->index()->nullable();
             $table->timestamps();
-
-            $table->fullText('description');
-            $table->fullText('content');
+            
+            if (env('DB_CONNECTION') !== 'sqlite') {
+                $table->fullText('description');
+                $table->fullText('content');
+            }
         });
     }
 
