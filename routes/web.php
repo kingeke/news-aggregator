@@ -13,6 +13,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get("/", "DashboardController@index")->name('dashboard');
 
+    Route::get("/runScrapper", "SettingsController@runScrapper")->name('runScrapper');
+
     Route::group(['prefix' => 'profile'], function () {
         
         Route::get('/', "ProfileController@edit")->name('profile.edit');

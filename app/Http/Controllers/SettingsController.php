@@ -4,9 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Jobs\RunCommandAsync;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 
 class SettingsController extends Controller
 {
+    public function runScrapper()
+    {
+        Artisan::call("news:scrapper");
+
+        return back()->with('message', messageResponse('success', "News Scrapper ran successfully"));
+    }
+    
     public function setupArticleSources()
     {
         $articleSources = collect(config('main.articles_data_sources'))->values()->sortBy('label')->values();

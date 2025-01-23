@@ -3,7 +3,7 @@ import { HomeIcon } from '@/Components/Icons';
 import { css } from '@emotion/css';
 import { useTheme } from '@emotion/react';
 import { Link, router, usePage } from '@inertiajs/react';
-import { ArrowBackIos, Logout, Person, Refresh } from '@mui/icons-material';
+import { ArrowBackIos, Logout, Person, Refresh, Settings } from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Tooltip } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
@@ -60,6 +60,12 @@ export default function NavItems({
                 title: "Profile",
                 icon: <Person />,
                 route: "profile.edit",
+                show: true,
+            },
+            {
+                title: "Run Scrapper",
+                icon: <Settings />,
+                route: "runScrapper",
                 show: true,
             },
             {
