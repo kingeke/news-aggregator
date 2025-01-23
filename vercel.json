@@ -19,9 +19,9 @@
     ],
     "env": {
         "APP_ENV": "local",
-        "APP_DEBUG": "true",
-        "APP_VERCEL": "true",
-        "REDIRECT_HTTPS": "true",
+        "APP_DEBUG": "TRUE",
+        "APP_VERCEL": "TRUE",
+        "REDIRECT_HTTPS": "TRUE",
         "DB_DATABASE": "/tmp/database.sqlite",
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
