@@ -27,13 +27,17 @@ class AppServiceProvider extends ServiceProvider
 
             $dbPath = env('DB_DATABASE', database_path('database.sqlite'));
 
-            if (File::exists($dbPath)) {
+            if (!File::exists($dbPath)) {
 
                 File::put($dbPath, '');
 
-                Artisan::call("migrate:fresh");
+                Artisan::call("migrate:fresh --force");
 
-                Artisan::call("db:seed");
+                info("Done migration");
+
+                Artisan::call("db:seed --force");
+
+                info("Done DB Seed");
             }
         }
 
