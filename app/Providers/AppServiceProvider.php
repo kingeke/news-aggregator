@@ -23,6 +23,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         if (isVercel()) {
+
+            echo "nonso";
         
             \Illuminate\Support\Facades\URL::forceScheme('https');
 
